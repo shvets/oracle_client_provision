@@ -1,0 +1,21 @@
+# -*- encoding: utf-8 -*-
+
+require File.expand_path(File.dirname(__FILE__) + '/lib/oracle_client_provision/version')
+
+Gem::Specification.new do |spec|
+  spec.name          = "oracle_client_provision"
+  spec.summary       = %q{Thor-based tasks for installing oracle client}
+  spec.description   = %q{Thor-based tasks for installing oracle client.}
+  spec.email         = "alexander.shvets@gmail.com"
+  spec.authors       = ["Alexander Shvets"]
+  spec.homepage      = "http://github.com/shvets/oracle_client_provision"
+
+  spec.files         = `git ls-files`.split($\)
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
+  spec.version       = OracleClientProvision::VERSION
+  spec.license       = "MIT"
+
+  <%= project_dependencies %>
+end
+

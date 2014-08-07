@@ -1,0 +1,17 @@
+{
+  "user": "ENV['USER']",
+  "home": "ENV['HOME']",
+  "ruby_home": "ENV['MY_RUBY_HOME']",
+
+  "oracle_base": "/usr/local/oracle",
+  "oracle_version": "11.2.0.4.0",
+  "ruby_oci_version": "2.1.7",
+  "tns_admin_dir": "#{oracle_base}/network/admin",
+
+  "src_dir": "downloads",
+  "dest_dir": "#{oracle_base}/instantclient_11_2",
+
+  "basic_zip": "#{src_dir}/instantclient-basic-macos.x64-#{oracle_version}.zip",
+  "sdk_zip": "#{src_dir}/instantclient-sdk-macos.x64-#{oracle_version}.zip",
+  "sqlplus_zip": "#{src_dir}/instantclient-sqlplus-macos.x64-#{oracle_version}.zip"
+}
