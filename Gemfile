@@ -3,7 +3,7 @@ source "https://rubygems.org"
 # Run "bundle install --without=oracle" to install gems without ruby-oci8 driver
 
 group :default do
-  gem "text-interpolator", "~>1.0"
+  gem "text-interpolator", "~>1.1"
   gem "script_executor", "~>1.5"
   gem "thor", "~>0.19"
   gem "json_pure", "~>1.8"

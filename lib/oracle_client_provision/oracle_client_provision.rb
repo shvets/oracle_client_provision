@@ -1,8 +1,4 @@
-require 'json'
-require 'script_executor/executable'
-require 'script_executor/script_locator'
 require 'script_executor/base_provision'
-require 'text_interpolator'
 
 class OracleClientProvision < BaseProvision
   include Executable, ScriptLocator
@@ -14,7 +10,11 @@ class OracleClientProvision < BaseProvision
   end
 
   def install
-    run(server_info.merge({:sudo => true, :capture_output => true}), "install", env)
+    puts "ruby home: #{env[:project][:ruby_home]}"
+    puts "ruby_oci_version: #{env[:oracle][:ruby_oci_version]}"
+    puts "user: #{env[:node][:user]}"
+
+    run(server_info.merge({:sudo => true, :capture_output => true}), "install_client", env)
 
     run(server_info, "install-ruby-oci8", env)
   end
@@ -24,7 +24,7 @@ class OracleClientProvision < BaseProvision
   end
 
   def verify &code
-    run(server_info, "verify", env.merge(:cmd => code.call))
+    run(server_info, "verify_install", env.merge(:cmd => code.call))
   end
 
 end
